@@ -1,0 +1,1605 @@
+/*
+* Dapper V1
+* Copyright 2016
+* 08/19/2016
+*/
+
+
+/* Table of contents
+––––––––––––––––––––––––––––––––––––––––––––––––––
+- Reset
+- Grid
+- Styles
+- Typography
+- Back to Top
+- Mobile Navigation
+- Media Queries
+
+*/
+
+
+/* Reset from Jake */
+
+html {
+    display: block;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+head, meta, title, link, style, script {
+    display: none;
+}
+body {
+    margin: 0;
+    font-family: sans-serif;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+}
+body, p, div, layer, article, aside, footer, header, hgroup, main, nav, section, figure, blockquote, address, marquee, figcaption {
+    display: block;
+}
+img {
+    max-width: 100%;
+    height: auto;
+    border: 0;
+}
+q {
+    display: inline
+}
+q:before {
+    content: open-quote;
+}
+q:after {
+    content: close-quote;
+}
+center {
+    display: block;
+}
+hr {
+    display: block;
+    border-style: inset;
+    border-width: 1px;
+}
+map {
+    display: inline;
+}
+video {
+    object-fit: contain;
+}
+audio,
+video {
+  display: inline-block;
+}
+h1 {
+    display: block;
+    font-size: 2em;
+    font-weight: bold;
+}
+h2 {
+    display: block;
+    font-size: 1.5em;
+    margin-top: 0.83em;
+    margin-bottom: 0.83em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+}
+h3 {
+    display: block;
+    font-size: 1.17em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+}
+h4 {
+    display: block;
+    margin-top: 1.33em;
+    margin-bottom: 1.33em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+}
+h5 {
+    display: block;
+    font-size: .83em;
+    margin-top: 1.67em;
+    margin-bottom: 1.67em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+}
+h6 {
+    display: block;
+    font-size: .67em;
+    margin-top: 2.33em;
+    margin-bottom: 2.33em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+}
+table {
+    display: table;
+    border-collapse: separate;
+    border-spacing: 2px;
+    border-color: gray;
+}
+thead {
+    display: table-header-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+tfoot {
+    display: table-footer-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+table > tr {
+    vertical-align: middle;
+}
+col {
+    display: table-column;
+}
+colgroup {
+    display: table-column-group;
+}
+tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+td, th {
+    display: table-cell;
+    vertical-align: inherit;
+}
+th {
+    font-weight: bold;
+}
+caption {
+    display: table-caption;
+    text-align: center;
+}
+ul, menu, dir {
+    display: block;
+    list-style-type: disc;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 40px;
+}
+ol {
+    display: block;
+    list-style-type: decimal;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 40px;
+}
+li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
+ul ul, ol ul {
+    list-style-type: circle;
+}
+ol ol ul, ol ul ul, ul ol ul, ul ul ul {
+    list-style-type: square;
+}
+dd {
+    display: block;
+    margin-left: 40px;
+}
+dl {
+    display: block;
+    margin-top: 1__qem;
+    margin-bottom: 1em;
+    margin-left: 0;
+    margin-right: 0;
+}
+dt {
+    display: block
+}
+ol ul, ul ol, ul ul, ol ol {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+/* form elements */
+form {
+    display: block;
+    margin-top: 0__qem;
+}
+label {
+    cursor: default;
+}
+legend {
+    display: block;
+    margin-left: 2px;
+    padding-right: 2px;
+    border: none;
+}
+fieldset {
+    display: block;
+    margin-left: 2px;
+    margin-right: 2px;
+    padding-top: 0.35em;
+    padding-left: 0.75em;
+    padding-right: 0.75em;
+    padding-bottom: 0.625em;
+    border: 2px groove ThreeDFace;
+    min-width: -webkit-min-content;
+    min-width: -moz-min-content;
+    min-width: min-content;
+}
+button {
+    overflow: visible;
+    border: 0;
+    font: inherit;
+    -webkit-font-smoothing: inherit;
+    letter-spacing: inherit;
+    background: none;
+    cursor: pointer;
+}
+
+
+/* Grid from Cheryl
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.container-fullwidth {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+  box-sizing: border-box; }
+.page,
+.column,
+.columns {
+  width: 100%;
+  float: left;
+  box-sizing: border-box; }
+
+/* For devices larger than 480px */
+@media (min-width: 480px) {
+  .container {
+    width: 85%;
+    padding: 0; }
+}
+
+/* For devices larger than 768px */
+@media (min-width: 768px) {
+  .container {
+    width: 80%; }
+  .row {
+    margin-left: -15px;
+    margin-right: -15px; }
+  .page,
+  .column,
+  .columns {
+    padding: 0 15px 0; }
+  
+  .one.column,
+  .one.columns                    { width: 8.33333333333%; }
+  .two.columns                    { width: 16.6666666667%; }
+  .three.columns                  { width: 25%;            }
+  .four.columns                   { width: 33.3333333333%; }
+  .five.columns                   { width: 41.6666666667%; }
+  .six.columns                    { width: 50%;            }
+  .seven.columns                  { width: 58.3333333333%; }
+  .eight.columns                  { width: 66.6666666667%; }
+  .nine.columns                   { width: 75.0%;          }
+  .ten.columns                    { width: 83.3333333333%; }
+  .eleven.columns                 { width: 91.6666666667%; }
+  .twelve.columns                 { width: 100%;}
+
+  .one-third.page                 { width: 33.3333333333%; }
+  .two-thirds.page                { width: 66.6666666667%; }
+
+  .one-half.page                  { width: 50%; }
+    
+  .full.page                      { width: 100% }                   
+
+  /* Offsets */
+  .shift-rt-1col                  { margin-left: 8.3333333333%; }
+  .shift-rt-2cols                 { margin-left: 16.6666666667%; }
+  .shift-rt-3cols                 { margin-left: 25%; }
+  .shift-rt-4cols                 { margin-left: 33.3333333333%; }
+  .shift-rt-5cols                 { margin-left: 41.6666666667%; }
+  .shift-rt-6cols                 { margin-left: 50%;            }
+  .shift-rt-7cols                 { margin-left: 58.3333333333%; }
+  .shift-rt-8cols                 { margin-left: 66.6666666667%; }
+  .shift-rt-9cols                 { margin-left: 75.0%;          }
+  .shift-rt-10cols                { margin-left: 83.3333333333%; }
+  .shift-rt-11cols                { margin-left: 91.6666666667%; }
+
+
+  .shift-rt-one-third             { margin-left: 33.3333333333%; }
+  .shift-rt-two-thirds            { margin-left: 66.3333333337%; }
+
+  .shift-rt-one-half              { margin-left: 50%; }
+    
+  .centered-one.column,
+  .centered-one.columns           { width: 8.33333333333%; margin-left: 45.8333333333%; }
+  .centered-two.columns           { width: 16.6666666667%; margin-left: 41.6666666667%; }
+  .centered-three.columns         { width: 25%; margin-left: 37.5%; }
+  .centered-four.columns          { width: 33.3333333333%; margin-left: 33.3333333333%; }
+  .centered-five.columns          { width: 41.6666666667%; margin-left: 29.1666666667%; }
+  .centered-six.columns           { width: 50%; margin-left: 25%; }
+  .centered-seven.columns         { width: 58.3333333333%; margin-left: 20.8333333333%; }
+  .centered-eight.columns         { width: 66.6666666667%; margin-left: 16.6666666667%; }
+  .centered-nine.columns          { width: 75.0%; margin-left: 12.5000000000%; }
+  .centered-ten.columns           { width: 83.3333333333%; margin-left: 8.33333333333%; }
+  .centered-eleven.columns        { width: 91.6666666667%; margin-left: 4.16666666667%; }
+
+}
+
+/* For devices larger than 1200px */
+@media (min-width: 1200px) {
+    max-width: 75%;
+}
+
+/* Additional Classes for page layout */
+
+.floatL {
+    float: left;
+}
+.floatR {
+    float: right;
+}
+.container:after,
+.row:after,
+.clearIt {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Styling from Noel 
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+html {
+    font-family: Lato, "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+body {
+    width: 100%;
+    font-size: 100%;
+    line-height: 1.4em;
+    font-weight: 300;
+    padding: 0;
+    margin: 0;
+    color: #111111;
+}
+
+header {
+    width: 100%;
+    min-height: 5em;
+    background-color: #D6D6D6;
+    border-color: #CCCCCC;
+    border-style: solid;
+    border-width: 0 0 1.25em 0;   
+}
+
+footer {
+    width: 100%;
+    min-height: 5em;
+    margin: 1em auto 0 auto;
+    bottom: 1;
+    position: absolute;
+    text-align: center;
+    background-color: #D6D6D6;
+    border-color: #CCCCCC;
+    border-style: solid;
+    border-width: 1.25em 0 0 0;
+}
+
+/* Typographical Elements */
+p {
+    margin-top: .5em;
+}
+
+h1 {
+    font-size: 325%;
+    line-height: 1em; 
+}
+h2 {
+    font-size: 200%;
+    line-height: 1em; 
+}
+h3 {
+    font-size: 125%;
+}
+h4 {
+    font-size: 90%;
+}
+h5 {
+    font-size: 65%;
+}
+h6 {
+    font-size: 50%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-top: .5em;
+    letter-spacing: 2px;
+}
+
+figure {
+  margin: 1em 2.5em;
+}
+
+figcaption {
+    margin-top: .5em;
+    font-size: .75em;
+    display: block;
+    text-align: center;
+    font-style: italic;
+    letter-spacing: .75px;
+}
+
+a {
+    color: #307FF2;
+    text-decoration: none;
+}
+a:hover {
+    color: #3DA6F4;
+    text-decoration: underline;
+}
+a:active {
+    font-weight: 500;
+}
+
+/* Soft yellow outlined rounded highlight  */
+mark {
+    padding: 0em .1em 0em .1em;
+    margin: 0 -.04em 0 -.04em;
+    border-radius: 4px 4px 4px 0px;
+    background-color: #FFFC83;
+    border: solid yellow 2px;
+}
+
+/* USER TEXT SELECT - Red background/white text/burgundy text drop-shadow */
+
+/* IE9  - Also picked up by most modern browsers */
+::selection {
+  background: red;
+  color: white;
+  text-shadow: -7px 5px 7px #720000;
+  font-style: italic;
+}
+/* Safari & Chrome - Webkit Rendering */
+::-webkit-selection {
+  background: red;
+  color: white;
+  text-shadow: -7px 5px 7px #720000;
+}
+/* Mozilla based - Gecko Rendering */ 
+::-moz-selection {
+  background: red;
+  color: white;
+  text-shadow: -7px 5px 7px #720000;
+}
+
+
+/* Tables: Rows/Headers/Data
+   Th/Td Elements include right side white border
+*/
+table {
+    width: 75%;
+    margin: 1em auto 1em auto;
+    border-collapse: collapse;   
+}
+
+thead {
+    background-color: #939393;
+    color: gray;
+    text-align: center;
+    font-weight: 400;
+    color: #E1E1E1;
+}
+
+th {
+    font-size: .75em;
+    height: .5em;
+    padding: .5em 0 .4em .5em;
+    background-color: #D6D6D6;
+    color: white;  
+    text-align: left;
+    font-weight: 400;
+    letter-spacing: 2px;
+}
+
+thead th {
+    height: .75em;
+    letter-spacing: 5px;
+    font-weight: 500;
+    color: white;
+    background-color: #A5A5A5;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 7px;
+}
+
+.table-full {
+    width: 98%;
+}
+.table-md {
+    width: 50%;
+}
+.table-sm {
+    width: 35%;
+}
+
+td {
+    height: 2em;
+    font-size: .9em;
+    padding: .5em 0 .4em .5em;
+    letter-spacing: -.75px;
+    background-color: #EAEAEA;
+    color: gray;
+    font-weight: 500;
+}
+
+/* FORM DEFAULTS */
+form {
+    max-width: 100%;
+    color: gray;
+    margin: 1.5em auto 0 auto;
+    display: block;
+}
+
+fieldset {
+    max-width: 50%;
+    margin: 0 auto 0 auto;
+    border: 2px solid gray;
+    padding: 1em;
+}
+
+legend {
+    padding: .55em;
+    background-color: gray;
+    color: white;
+    margin: 1em 0 2em 0;
+    border-radius: 1em 1em 1em 1em;
+    font-size: 1.25em;
+    text-transform: uppercase;
+}
+
+label {
+    font-size: 1em;
+    padding: .6em 1em;
+    background-color: lightgray;
+    border-radius: .5em .5em 0 0;
+    font-weight: 400;
+}
+
+textarea {
+    margin-top: .5em;
+    padding: .65em;
+    display: block;
+    width: 93%;
+	min-height: 2em;
+    color: gray;
+    font-size: 1em;
+    font-weight: 400;
+    border: 2px solid lightgray;
+}
+textarea:active {
+    border: 2px solid gray;
+}
+
+/* Select Form Dropdown*/
+select {
+    min-width: 16em;
+    height: 3em;
+    margin-top: .5em;
+    padding-left: .75em;
+    padding-right: .75em;
+    border-radius: 0 1.45em 1.45em .5em;
+    font-size: 1em;
+    border: solid lightgray 1px;
+    color: lightgray;
+    background: url(../images/dropdown-arrow-light.png);
+    background-size: 36px 36px;
+    background-position: 214px 5px; 
+    background-repeat: no-repeat;
+    background-color: darkgray;   
+}
+select:hover {
+    background-color: gray;   
+}
+
+input {
+    margin-top: .5em;
+    padding: .65em;
+    min-height: 1em;
+    display: block;
+    width: 93%;
+    border: 2px solid lightgray;
+    font-size: 1em;
+}
+/* Input clicked */
+input:active {
+    border: 2px solid gray;
+}
+input[type="text"] { 
+    color: gray;
+    padding-left: .5em;
+    padding-right: .5em;
+    font-size: 1em;
+    text-transform: capitalize;
+}
+input[type="password"] { 
+    color: #AD3A3A;
+    width: 15.75em;
+    margin: .5em auto 1.25em auto;
+    padding-left: .25em;
+    padding-right: .3em;
+    font-size: 1em;
+}
+input[type="number"] { 
+    color: gray;
+    width: 15.75em;
+    margin: .5em auto 1.25em auto;
+    padding-left: .25em;
+    padding-right: .3em;
+    font-size: 1em;
+    font-style: italic;
+    letter-spacing: 10px;
+}
+input[type="radio"] { 
+    width: 15%;
+    padding: .5em;
+    height: auto;
+    color: gray;
+    margin: .75em 0 -.75em .5em;
+    font-size: 2em;  
+}
+input[type="radio"]::selection { 
+    width: 15%;
+    padding: .5em;
+    height: auto;
+    color: gray;
+    margin: .75em 0 -.75em .5em;
+    font-size: 2em;
+}
+input[type="radio"]:not(checked) { 
+    width: 15%;
+    padding: .5em;
+    height: auto;
+    color: gray;
+    margin:.75em 0 -.75em .5em;
+    font-size: 2em;  
+}
+input[type="checkbox"] { 
+    width: 15%;
+    padding: .5em;
+    height: auto;
+    color: gray;
+    margin: .75em 0 -.75em .5em;
+    font-size: 2em; 
+}
+input[type="checkbox"]:checked { 
+    width: 15%;
+    padding: .5em;
+    height: auto;
+    color: gray;
+    margin: .75em 0 -.75em .5em;
+    font-size: 2em;
+}
+input[type="checkbox"]:not(checked) { 
+    width: 15%;
+    padding: .5em;
+    height: auto;
+    color: gray;
+    margin: .75em 0 -.75em .5em;
+    font-size: 2em;  
+}
+
+/* Input "button-like elements*/
+input[type="submit"] {
+    width: 8em;
+    padding: .25em;
+    height: auto;
+    color: white;
+    margin: .5em 0;
+    font-size: 1.5em;
+    background-color: gray;
+    border-radius: .4em .4em .4em .4em;
+    border: 4px #C6C6C6;
+    border-style:inset;
+}
+input[type="submit"]:active { 
+    color: darkgray;
+    border-style:solid;
+}
+input[type="submit"]:hover { 
+    border-style:solid;
+}
+input[type="button"] {
+    width: 8em;
+    padding: .25em;
+    height: auto;
+    color: white;
+    margin: .5em 0;
+    font-size: 1.5em;
+    background-color: #307FF2;
+    border-radius: .4em .4em .4em .4em;
+    border: 4px #61BEF7;
+    border-style:inset;
+}
+input[type="button"]:active { 
+    color: #61BEF7;
+    border-style:solid;
+}
+input[type="button"]:hover { 
+    border-style:solid;
+}
+input[type="reset"] {
+    width: 8em;
+    padding: .25em;
+    height: auto;
+    color: white;
+    margin: .5em 0;
+    font-size: 1.5em;
+    background-color: #58DDA7;
+    border-radius: .4em .4em .4em .4em;
+    border: 4px #7BFFCC;
+    border-style:inset;
+}
+input[type="reset"]:active { 
+    color: #8FF7D1;
+    border-style:solid;
+}
+input[type="reset"]:hover { 
+    border-style:solid;
+}
+
+button { 
+    width: 8em;
+    padding: .25em;
+    display: block;
+    height: auto;
+    color: white;
+    margin: .25em 0;
+    font-size: 1.5em;
+    background-color: #FF6464;
+    border-radius: .4em .4em .4em .4em;
+    border: 4px #FC8383;
+    border-style:inset;
+}
+button:active { 
+    color: #F79A9F;
+    border-style:solid;
+}
+button:hover { 
+    border-style:solid;
+}
+
+/* Below custom "box" wrapper with complimetary full label/header/text-banner 
+Best used when Radio/Checkbox form areas placed within
+*/
+.box-wrap {
+    min-height: 7em;
+    width: 16em;
+    margin: 1.25em auto 1.25em auto;
+    border: 2px solid lightgray;
+    padding: 2em 0 2.5em 0;
+    background-color: #F7F7F7;
+}
+
+/* Below use with .box-wrap as a complimentaryfull label/header/text-banner */
+.box-label {
+    font-size: 1em;
+    width: 15.25em;
+    margin-top: -2em;
+    padding: 1.25em 0 1.25em .75em;
+    background-color: lightgray;
+    font-weight: 400;
+}
+
+/* Below can be applied to accompanying Radio/Checkbox text placed within Box-Wrap*/
+.box-text {
+    margin: 0 0 0 6em;
+    font-size: .9em;
+    color: gray;  
+}
+
+
+/* ELEMENT CUSTOM STYLES - BELOW */
+
+/* TABLE CUSTOM STYLES - 
+   Apply to TH/TD elements to change background color and borders
+*/
+.tb-border-lite {
+    border:solid white 1px;
+}
+
+.tb-border-dark {
+    border:solid gray 1px;
+}
+
+.tb-no-border {
+    border: 0px;
+}
+
+/* Highlight any cell in a table */
+.tb-highlight {
+    background-color: #F7FFA6;
+}
+
+/* Mark off/Strikethrough any cell in a table w/lighter font color */
+.tb-strike {
+    text-decoration: line-through;
+    font-weight: 100;
+    color: #C1C1BF;
+}
+
+/* Differentiate areas in a table w/lighter background */
+.tb-striped {
+    background-color: #F4F4F4;
+    color: gray;
+}
+
+/* CUSTOM BUTTON STYLES BELOW */
+
+/* Large Button Size class
+Can be applied to types="Submit/Button/Reset" and <Button> element
+*/
+.lrg-btn { 
+    width: 8em;
+    padding: .2em;
+    font-size: 2em;
+}
+/* Small Button Size class */
+.sml-btn { 
+    width: 6.5em;
+    padding: .2em;
+    font-size: 1.5em;
+    border-radius: .5em .5em .5em .5em;
+}
+/* Extra Small Button Size class */
+.xsml-btn { 
+    width: 9.5em;
+    font-size: .6em;
+    padding: .5em;
+    border-radius: .75em .75em .75em .75em;
+}
+
+/* MISC CUSTOM STYLES BELOW */
+
+/* Soft pink outlined rounded text highlight  */
+.mark-pink {
+    padding: 0em .1em 0em .1em;
+    margin: 0 -.04em 0 -.04em;
+    border-radius: 4px 4px 4px 0px;
+    background-color: #F49FC5;
+    border: solid #F286B7 2px;
+}
+/* Soft blue outlined rounded text highlight  */
+.mark-blue {
+    padding: 0em .1em .0em .1em;
+    margin: 0 -.04em 0 -.04em;
+    border-radius: 4px 4px 4px 0px;
+    background-color: #9CDCF9;
+    border: solid #7BD2F0 2px;
+}
+/* Light gray outlined rounded text highlight  */
+.mark-gray {
+    padding: .0em .1em 0em .1em;
+    margin: 0 -.04em 0 -.04em;
+    border-radius: 4px 4px 4px 0px;
+    background-color: #C6C6C6;
+    border: solid #B2B2B2 2px;
+}
+/* Styling for Alert/Confirm/Prompt Box closing containers */   
+.alert {
+    padding: 1em 1.5em 1em 1em;
+    width: 55%;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    margin: 1em 1em; 
+    border-radius: .25em .25em;
+    border-left: 1.5em solid darkgray;
+    z-index: 1;
+    background-color: #f44336;
+}
+.prompt {
+    padding: 1em 1.5em 1em 1em;
+    width: 55%;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    margin: 1em 1em; 
+    border-radius: .25em .25em;
+    border-left: 1.5em solid darkgray;
+    z-index: 1;
+    background-color: #3bbfed; 
+}
+.confirm {
+    padding: 1em 1.5em 1em 1em;
+    width: 55%;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    margin: 1em 1em; 
+    border-radius: .25em .25em;
+    border-left: 1.5em solid darkgray;
+    z-index: 1;
+    background-color: #39c988;
+}
+/* Styling for Alert/Confirm/Prompt Box closing "x"/"ok" button text */
+.closebtn {
+    margin-left: 15px;
+    color: white;
+    background-color: darkgray;
+    padding: .25em .35em;
+    border-radius: .2em;
+    font-weight: bold;
+    float: right;
+    cursor: alias;
+    font-size: 1.5em;
+}
+.closebtn:hover {
+    color: gray;
+    background-color: lightgray;
+    transition: 500ms;
+    
+}
+.popupHeader {
+    margin-left: 0;
+    margin-top: -.25em;
+}
+.popupInput {
+    margin-top: 1em;
+    margin-left: 0;
+    max-width: 96%;  
+}
+
+/* MEDIA QUERIES - min width: 480px/768px/960px/1200px */
+
+@media only screen and (min-width: 480px)  {
+/* Content Containers */
+
+header {
+    min-width: 100%;
+    min-height: 5.5em;
+}
+
+footer {
+    min-height: 5.5em;
+}
+
+/* FORM DEFAULTS */
+form {
+    min-width: 480px;
+}
+
+fieldset {
+    max-width: 420px;
+    padding: .5em;
+}
+
+label {
+    margin: .5em auto 0 1.05em;
+}
+
+textarea {
+    margin: .5em auto .5em auto;
+    width: 22.6em;
+}
+    
+/* Select Form Dropdown*/
+select {
+    min-width: 24.25em;
+    margin: .4em auto .5em 1em;
+    background-position: 345px 5px;    
+}
+    
+input {
+    margin: .5em auto .5em auto;
+    width: 22.9em;
+}
+/* Input clicked */
+input[type="password"] { 
+    width: 23.3em;
+}
+input[type="number"] { 
+    width: 23.3em;
+}
+
+/* Below custom "box" wrapper with complimetary full label/header/text-banner 
+Best used when Radio/Checkbox form areas placed within
+*/
+.box-wrap {
+    width: 24em;
+}
+
+/* Below use with .box-wrap as a complimentaryfull label/header/text-banner */
+.box-label {
+    font-size: 1.05em;
+    width: 22.25em;
+}
+
+/* ELEMENT CUSTOM STYLES - BELOW */
+
+/* Small Button Size class */
+.sml-btn { 
+    width: 6em;
+}
+/* Extra Small Button Size class */
+.xsml-btn { 
+    width: 9.5em;
+    font-size: .6em;
+    padding: .5em;
+    border-radius: .75em .75em .75em .75em;
+}
+} /* END OF MIN-WIDTH:480PX */
+
+@media only screen and (min-width: 768px)  {
+/* Content Containers */
+header {
+    min-height: 8.5em;
+}
+
+footer {
+    min-height: 8.5em;
+}
+
+/* FORM DEFAULTS */
+form {
+    max-width: 768px;
+    margin: 1.5em auto 1em auto;
+}
+
+fieldset {
+    min-width: 625px;
+}
+
+label {
+    padding: .75em 1em;
+}
+
+textarea {
+    margin: .6em auto .5em auto;
+    width: 35.5em;
+}
+    
+/* Select Form Dropdown*/
+select {
+    width: 37.25em;
+    background-position: 553px 5px;   
+}
+
+input {
+    margin: .65em auto .5em auto;
+    width: 35.75em;
+}
+/* Input clicked */
+input[type="password"] { 
+    margin: .6em auto 1.25em auto;
+    width: 36.25em;
+}
+input[type="number"] { 
+    width: 36.25em;
+    margin: .6em auto 1.25em auto;
+}
+
+/* Below custom "box" wrapper with complimetary full label/header/text-banner 
+Best used when Radio/Checkbox form areas placed within
+*/
+.box-wrap {
+    width: 36.75em;
+    margin: 1.25em auto 1.75em auto;
+}
+
+/* Below use with .box-wrap as a complimentaryfull label/header/text-banner */
+.box-label {
+    font-size: 1.1em;
+    width: 32.65em;
+    margin-top: -1.85em;
+}
+} /* END OF MIN-WIDTH:768PX */
+
+@media only screen and (min-width: 960px)  {
+/* Content Containers */
+
+header {
+    max-width: 960px;
+    min-height: 9.5em;
+}
+
+footer {
+    min-height: 9.5em;
+}
+
+/* FORM DEFAULTS */
+form {
+    max-width: 960px;
+    margin: 1.5em auto 1em auto;
+}
+
+fieldset {
+    min-width: 685px;
+    margin: 0 auto 0 auto;
+    border: 2px solid gray;
+    padding: 1em;
+}
+
+label {
+    margin: .5em auto 0 1.05em;
+    padding: .75em 1em;
+}
+
+textarea {
+    margin: .65em auto .5em auto;
+    width: 35.25em;
+}
+
+/* Select Form Dropdown*/
+select {
+    width: 37.25em;
+    margin: .65em auto .5em 1em;
+    background-size: 41px 41px;
+    background-position: 608px 5px;    
+}
+
+input {
+    margin: .65em auto .5em auto;
+    width: 35.6em;
+}
+
+input[type="password"] { 
+    width: 36em;
+}
+input[type="number"] { 
+    width: 36em;
+}
+
+/* Below custom "box" wrapper with complimetary full label/header/text-banner 
+Best used when Radio/Checkbox form areas placed within
+*/
+.box-wrap {
+    width: 36.75em;
+    margin: 1.25em auto 1.75em auto;
+}
+
+/* Below use with .box-wrap as a complimentaryfull label/header/text-banner */
+.box-label {
+    font-size: 1.1em;
+    width: 32.65em;
+    margin-top: -1.85em;
+}
+
+/* ELEMENT CUSTOM STYLES - BELOW */
+/* Custom Button Styles - BELOW */
+/* Small Button Size class */
+.sml-btn { 
+    width: 6em;
+}
+} /* END OF MIN-WIDTH:960PX */
+
+@media only screen and (min-width: 1200px)  {
+/* Content Containers */
+body {
+    font-size: 105%;
+}
+
+footer {
+    min-height: 7.5em;
+}
+
+/* Tables: Rows/Headers/Data - 
+   Th/Td Elements include right side white border
+ */
+table {
+    width: 80%;  
+}
+
+/* FORM DEFAULTS */
+form {
+    max-width: 1200px;
+}
+
+fieldset {
+    min-width: 715px;
+}
+
+/* Select Form Dropdown*/
+select {
+    width: 37em;
+    background-size: 42px 42px;
+    background-position: 631px 5px;    
+}
+
+input[type="password"] { 
+    margin: .6em auto 1.25em auto;
+}
+input[type="number"] { 
+    margin: .6em auto 1.25em auto;
+}
+
+/* Input "button-like elements*/
+input[type="submit"] { 
+    font-size: 1.25em;
+}
+
+input[type="button"] { 
+    font-size: 1.25em;
+}
+
+input[type="reset"] { 
+    font-size: 1.25em;
+}
+
+button { 
+    font-size: 1.25em;
+}
+
+/* Below custom "box" wrapper with complimetary full label/header/text-banner 
+Best used when Radio/Checkbox form areas placed within
+*/
+.box-wrap {
+    min-height: 7em;
+    width: 36.75em;
+    margin: 1.25em auto 1.75em auto;
+    border: 2px solid lightgray;
+    padding: 2em 0 2.5em 0;
+    background-color: #F7F7F7;
+}
+} /* END OF MIN-WIDTH:1200PX */
+
+
+/* Typography from Nimah
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+abbr {
+    font-style: italic;
+}
+address {
+    font-size: 1.35em;
+    color: #666;
+}
+aside{
+    background-color: #f9f9f9;
+}
+.blockquote {
+  background: #f9f9f9;
+  border-left: 10px solid #ccc;
+  margin: 1.5em 2em;
+  padding: 0.5em 10px;
+  quotes: "\201C""\201D""\2018""\2019";
+}
+blockquote:before {
+  font-family: serif;
+  color: #ccc;
+  content: open-quote;
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+}
+blockquote {
+    padding: 20px;
+    color: #333;
+    font-size: 1.15em;
+    line-height: 1.25em;
+    font-style: italic;   
+}
+.blockquote cite {
+    font-style: normal;
+    font-size: .75em;
+    display: inline-block;
+}
+.capitalize {
+    text-transform: capitalize;
+}
+cite {
+    font-weight: 500;
+    background-color: #fefefe;
+}
+code {
+    color: #666;
+}
+.cornerBorderUL {
+    border-left:solid 1px #000;
+    border-top:solid 1px #000;
+}
+.cornerBorderUR {
+    border-right:solid 1px #000;
+    border-top:solid 1px #000;
+}
+.cornerBorderBL {
+    border-left:solid 1px #000;
+    border-bottom:solid 1px #000;
+}
+.cornerBorderBR {
+    border-right:solid 1px #000;
+    border-bottom:solid 1px #000;
+}
+.dropCap {
+    font-size: 50px;
+    float: left;
+    padding: 10px;
+    margin-right: .1em;
+    font-family: fantasy;
+}
+img {
+    padding: 10px;
+}
+.lowercase {
+    text-transform: lowercase;
+}
+ol {
+    list-style: upper-roman;
+}
+ol ol {
+    list-style: lower-roman;
+}
+ol ol ol {
+    list-style: upper-latin;
+}
+ol ol ol ol {
+    list-style: lower-latin;
+}
+.responsiveImg {
+    max-width: 100%;
+    height: auto;
+}
+var {
+    font-weight: bold;
+    font-size: 1.1em;
+}
+u {
+    text-decoration: underline;
+}
+ul {
+    list-style: square;
+}
+.uppercase {
+    text-transform: uppercase;
+}
+
+@media print {
+.noprint, .noprint * {
+    display: none !important;
+}
+}
+
+/* Back to Top from Cheryl
+------------------------------------------------- */
+
+.scrollToTop {
+	width: 35px; 
+	height: 35px;
+	padding: 5px;
+    border-radius: 5px;
+	text-align: center;
+	text-decoration: none;
+	position: fixed;
+	display: none;
+    opacity: .8;
+    z-index: 1;
+}
+.scrollToTop:hover {
+	text-decoration:none;
+    opacity: 1;
+}
+
+/* Mobile Navigation from Cheryl
+------------------------------------------------- */
+    
+.active {
+    background-color: #eaeaea;
+}
+    
+ul.topnav {
+    list-style-type: none;
+    margin-top: 10px;;
+    padding: 0;
+    overflow: hidden;
+    text-align: center;
+}
+
+ul.topnav > li {
+    display: inline-block;
+    color: #1c1c1c;
+}
+
+ul.topnav li > a {
+    border-radius: 5px 5px 0 0;
+}
+
+ul.topnav li > a, .dropbtn {
+    display: inline-block;
+    color: #1c1c1c;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: 1s;
+}
+
+ul.topnav > li a:hover, .dropdown:hover .dropbtn {
+    background-color: #a5a5a5;
+    color: #1c1c1c;
+}
+
+ul.topnav > li > a:hover {
+    border-radius: 5px 5px 0 0;
+}
+
+li.dropdown {
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    transition: 1s;
+    z-index: 10;
+}
+
+.dropdown-content a {
+    color: #1c1c1c;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    transition: .5s;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    background-color: #eaeaea;
+}
+    
+.dropdown-content a:hover {
+    color: #1c1c1c;
+    background-color: #a5a5a5;
+}
+
+#menuIcon {
+   display: none; margin: 20px 0;
+}
+
+@media screen and (max-width:768px) {
+    ul.topnav { 
+       display: none;
+    }
+
+    #menuIcon {
+        width: 100%;
+        display: block;
+        text-align: center;
+    }
+
+    #menuIcon i {
+        padding: 5px 5px;
+        border: 2px solid #a5a5a5;
+        border-radius: 5px;
+        color: #a5a5a5;
+    }
+
+    #menuIcon i:hover, #menuIcon i:active {
+        color: #d6d6d6;     
+    }
+}
+
+@media screen and (max-width:768px) {
+    ul.topnav.responsive {
+        position: relative;
+        display: block;
+        border: 1px solid #d6d6d6;
+        border-radius: 5px;
+    } 
+    ul.topnav.responsive li {
+        float: none;
+        display: block;
+        margin: 0;
+        border-bottom: 1px solid #d6d6d6;
+    }
+    ul.topnav.responsive li:last-child {
+        border-bottom: none;
+    }
+    ul.topnav.responsive li a {
+        display: block;
+    }
+        ul.topnav.responsive .dropdown-content {
+        position: relative;
+    }
+    .dropdown-content a {
+        text-align: center;
+    }
+}
+/* Text Resize from Nimah
+------------------------------------------------- */
+input[type="button"].sizeText {
+    width: 2em;
+    display: inline-block;
+}
+
+/* Accordion from Nimah
+------------------------------------------------- */
+.accordionSlide {
+    cursor: pointer;
+    background-color: #9a9a9a;   
+    padding: 10px;
+}
+.accordionContent {
+    display: none;
+    /*border: solid 1px #0e0e0e;*/
+    padding: 0px 10px;
+    max-width: 92%;
+}
+.accordionContent.default {
+    display: block;
+}
+#accordion{
+    border: solid 1px #0e0e0e;
+    padding: 10px;
+    max-width: 80%;
+}
+
+/* SlideShow from Nimah
+------------------------------------------------- */
+#slideShowContainer {
+    border:2px solid #555;
+    padding:10px;
+    width: 400px;
+    height: 400px;
+    position: relative;
+}
+#slideShowContainer img{
+    height: 400px;
+    width: 400px;
+    position: absolute;
+    z-index: 2;
+}
+#sliderLinks li{
+    position: relative;
+    display: table-cell;
+    top: 50px;
+    left:0%;
+    padding: 10px;
+}
+
+/* Full Page Header
+------------------------------------------------- */
+.fpheader {
+    border: none;
+}
+
+.fpheader img {
+    padding: 0;
+}
+
+/* Mobile Landscape */
+@media (min-width: 480px) {}
+
+/* Small Devices (tablets, 768 and above) */
+@media (min-width: 768px) {}
+
+/* Medium Devices (desktops, 960 and above) */
+@media (min-width: 960px) {}
+
+/* Larger Devices (large desktops, 1200 and above) */
+@media (min-width: 1200px) {}
